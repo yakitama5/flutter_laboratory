@@ -10,6 +10,13 @@
             "request": "launch",
             "flutterMode": "debug",
             "program": "lib/main_linked_scroll.dart",
+        },
+        {
+            "name": "carousel-slider",
+            "type": "dart",
+            "request": "launch",
+            "flutterMode": "debug",
+            "program": "lib/main_carousel_slider.dart",
         }
     ]
 }
