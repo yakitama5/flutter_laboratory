@@ -17,6 +17,13 @@
             "request": "launch",
             "flutterMode": "debug",
             "program": "lib/main_carousel_slider.dart",
+        },
+        {
+            "name": "max-height-bottom-sheet",
+            "type": "dart",
+            "request": "launch",
+            "flutterMode": "debug",
+            "program": "lib/max_height_bottom_sheet/main.dart",
         }
     ]
 }
