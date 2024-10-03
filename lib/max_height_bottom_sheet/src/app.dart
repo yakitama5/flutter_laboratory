@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_laboratory/max_height_bottom_sheet/bottom_sheet.dart';
+import 'package:flutter_laboratory/max_height_bottom_sheet/src/bottom_sheet.dart';
 
 class MaxHeightBottomSheetApp extends StatelessWidget {
   const MaxHeightBottomSheetApp({super.key});
