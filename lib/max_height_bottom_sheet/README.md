@@ -1,8 +1,7 @@
 # LinkedScroll
 
 ## やっていること
-`SliverAppBar`の背景に設定している画像と`Radius`設定済のボディ部を重ねて表示している。
+`showModalBottomSheet`の`maxHeight`を「画面全体の50%」→「画面全体の80%」となるように変更する
+高さをベタ指定ではなく、中の要素に応じて最小高で表示されるようにする
 
-スクロールした際に`SliverAppBar`の画像が透過されていく際に、ボディ部も合わせて透過されないように、分割して定義した上で`LinkedScroll`を用いてスクロールを同期する手法で実現している。
-
-<video src="https://github.com/user-attachments/assets/878c08dc-4906-4a45-93c4-314d94009fbc" controls="true" height="400"></video>
+<video src="https://github.com/user-attachments/assets/44cceb14-edbf-4a54-b096-1f886600869b" controls="true" height="400"></video>
