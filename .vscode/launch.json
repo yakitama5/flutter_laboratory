@@ -9,21 +9,21 @@
             "type": "dart",
             "request": "launch",
             "flutterMode": "debug",
-            "program": "lib/main_linked_scroll.dart",
+            "program": "lib/linked_scroll/src/main.dart",
         },
         {
             "name": "carousel-slider",
             "type": "dart",
             "request": "launch",
             "flutterMode": "debug",
-            "program": "lib/main_carousel_slider.dart",
+            "program": "lib/carousel_slider/src/main.dart",
         },
         {
             "name": "max-height-bottom-sheet",
             "type": "dart",
             "request": "launch",
             "flutterMode": "debug",
-            "program": "lib/max_height_bottom_sheet/main.dart",
+            "program": "lib/max_height_bottom_sheet/src/main.dart",
         }
     ]
 }
