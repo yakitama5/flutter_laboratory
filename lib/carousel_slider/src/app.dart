@@ -17,32 +17,38 @@ class _Page extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = [
+      Colors.blue,
+      Colors.red,
+      Colors.green,
+      Colors.yellow,
+      Colors.blueAccent,
+      Colors.redAccent,
+    ];
+
     return Scaffold(
-      body: CarouselSlider(
-        items: const [
-          SizedBox(
-            height: 240,
-            width: 160,
-            child: ColoredBox(color: Colors.black),
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(8),
+          child: CarouselSlider(
+            items: colors
+                .map(
+                  (color) => Padding(
+                    padding: const EdgeInsets.all(8),
+                    child: SizedBox(
+                      width: 120,
+                      child: ColoredBox(color: color),
+                    ),
+                  ),
+                )
+                .toList(),
+            options: CarouselOptions(
+              viewportFraction: 0.37,
+              autoPlay: true,
+              height: 120,
+              padEnds: false,
+            ),
           ),
-          SizedBox(
-            height: 240,
-            width: 160,
-            child: ColoredBox(color: Colors.black),
-          ),
-          SizedBox(
-            height: 240,
-            width: 160,
-            child: ColoredBox(color: Colors.black),
-          ),
-          SizedBox(
-            height: 240,
-            width: 160,
-            child: ColoredBox(color: Colors.black),
-          ),
-        ],
-        options: CarouselOptions(
-          enableInfiniteScroll: false,
         ),
       ),
     );
