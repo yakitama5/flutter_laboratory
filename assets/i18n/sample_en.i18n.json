@@ -1,0 +1,4 @@
+{
+  "greet": "${amount: currency}",
+  "today": "Today is ${date: yMd}"
+}
