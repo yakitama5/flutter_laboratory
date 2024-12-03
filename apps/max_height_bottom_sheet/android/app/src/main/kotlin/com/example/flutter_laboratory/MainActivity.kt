@@ -1,4 +1,4 @@
-package com.example.flutter_laboratory
+package com.yakuran.flutter_laboratory
 
 import io.flutter.embedding.android.FlutterActivity
 

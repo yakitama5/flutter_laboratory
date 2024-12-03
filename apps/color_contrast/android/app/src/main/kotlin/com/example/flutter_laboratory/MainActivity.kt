@@ -1,4 +1,4 @@
-package com.example.flutter_laboratory
+package com.yakuran.flutter_laboratory
 
 import android.content.Context
 import android.content.ContextWrapper
