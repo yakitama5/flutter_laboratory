@@ -1,43 +1,15 @@
-name: flutter_laboratory
-description: "This is working repository"
-publish_to: "none"
-version: 0.0.1
+name: flutter_labolatory
 
 environment:
-  sdk: ^3.5.0
-
-dependencies:
-  animations: null
-  clock: null
-  collection: null
-  device_info_plus: ^11.1.1
-  flutter:
-    sdk: flutter
-  flutter_hooks: null
-  flutter_localizations:
-    sdk: flutter
-  freezed_annotation: null
-  gap: null
-  hooks_riverpod: ^2.6.1
-  intl: null
-  json_annotation: null
-  linked_scroll_controller: null
-  logger: ^2.5.0
-  nested: null
-  responsive_framework: ^1.5.1
-  riverpod_annotation: ^2.6.1
+  sdk: ^3.5.4
 
 dev_dependencies:
-  build_runner: null
-  custom_lint: null
-  flutter_test:
-    sdk: flutter
-  freezed: null
-  json_serializable: null
-  nilts: null
-  pedantic_mono: null
-  riverpod_generator: ^2.6.1
-  riverpod_lint: ^2.6.1
-
-flutter:
-  uses-material-design: true
+  custom_lint: ^0.7.0
+  flutter_lints:
+  grinder: ^0.9.5
+  melos: ^6.2.0
+  nilts: ^0.17.0
+  path: ^1.9.0
+  pedantic_mono: ^1.29.0
+  yaml: ^3.1.2
+  yaml_edit: ^2.2.1

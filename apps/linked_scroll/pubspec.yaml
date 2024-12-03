@@ -1,0 +1,22 @@
+name: linked_scroll_app
+description: "This is working repository"
+publish_to: "none"
+version: 0.0.1
+
+environment:
+  sdk: ^3.5.4
+
+dependencies:
+  flutter:
+    sdk: flutter
+  linked_scroll_controller: 0.2.0
+
+dev_dependencies:
+  custom_lint: ^0.7.0
+  flutter_test:
+    sdk: flutter
+  nilts: ^0.17.0
+  pedantic_mono: ^1.29.0
+
+flutter:
+  uses-material-design: true

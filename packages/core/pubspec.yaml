@@ -1,0 +1,19 @@
+name: core
+description: "Core"
+publish_to: "none"
+version: 0.0.1
+
+environment:
+  sdk: ^3.5.4
+  flutter: ^3.24.4
+
+dependencies:
+  flutter:
+    sdk: flutter
+  logger:
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  nilts: ^0.17.0
+  pedantic_mono: ^1.29.0

@@ -6,38 +6,27 @@
   "configurations": [
     {
       "name": "linked-scroll",
+      "cwd": "apps/linked_scroll",
       "type": "dart",
       "request": "launch",
       "flutterMode": "debug",
-      "program": "lib/linked_scroll/src/main.dart"
-    },
-    {
-      "name": "carousel-slider",
-      "type": "dart",
-      "request": "launch",
-      "flutterMode": "debug",
-      "program": "lib/carousel_slider/src/main.dart"
+      "program": "lib/main.dart"
     },
     {
       "name": "max-height-bottom-sheet",
+      "cwd": "apps/max_height_bottom_sheet",
       "type": "dart",
       "request": "launch",
       "flutterMode": "debug",
-      "program": "lib/max_height_bottom_sheet/src/main.dart"
-    },
-    {
-      "name": "responsive",
-      "type": "dart",
-      "request": "launch",
-      "flutterMode": "debug",
-      "program": "lib/responsive/src/main.dart"
+      "program": "lib/main.dart"
     },
     {
       "name": "color-contrast",
+      "cwd": "apps/color_contrast",
       "type": "dart",
       "request": "launch",
       "flutterMode": "debug",
-      "program": "lib/color_contrast/src/main.dart"
+      "program": "lib/main.dart"
     }
   ]
 }
