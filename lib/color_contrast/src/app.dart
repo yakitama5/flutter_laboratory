@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_laboratory/color_contrast/src/state/app_theme_provider.dart';
-import 'package:flutter_laboratory/common/utils/logger.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class ColorContrastApp extends HookConsumerWidget {
@@ -10,6 +8,7 @@ class ColorContrastApp extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+// Providerで管理しているテーマをアプリに設定
     final theme = ref.watch(appThemeProvider);
 
     return MaterialApp(
@@ -43,11 +42,17 @@ class ColorContrastPage extends HookWidget {
               onPressed: _onPressed,
               child: const Text('Outlined'),
             ),
-            TextButton(onPressed: _onPressed, child: const Text('Text')),
+            const Card.filled(
+              child: SizedBox(
+                width: 240,
+                height: 140,
+                child: Center(child: Text('Filled Card')),
+              ),
+            ),
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
+      floatingActionButton: FloatingActionButton.large(
         onPressed: () {},
         child: const Icon(Icons.add),
       ),
@@ -55,14 +60,6 @@ class ColorContrastPage extends HookWidget {
   }
 
   void _onPressed() {
-    callColorContrast();
-  }
-
-  Future<String> callColorContrast() async {
-    // ネイティブの処理を呼び出す
-    const channel = MethodChannel('samples.flutter.dev/color_contrast');
-    final resultText = await channel.invokeMethod('getHello');
-    logger.d('Result: $resultText');
-    return '';
+    // do nothing
   }
 }

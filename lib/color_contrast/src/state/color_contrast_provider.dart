@@ -6,6 +6,6 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'color_contrast_provider.g.dart';
 
 @riverpod
-Future<AndroidColorContrast?> colorContrast(Ref ref) async {
-  return DeviceContrastService().getAndroidContrast();
+Future<ColorContrast?> colorContrast(Ref ref) async {
+  return DeviceContrastService().getColorContrast();
 }

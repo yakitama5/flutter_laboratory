@@ -1,4 +1,4 @@
-enum AndroidColorContrast {
+enum ColorContrast {
   low,
   middle,
   high,
