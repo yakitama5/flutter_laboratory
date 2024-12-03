@@ -1,0 +1,7 @@
+{
+  "flavor": "dev",
+  "appName": "MaxHeightBottomSheet",
+  "appIdAndroid": "com.yakuran.max_height_bottom_sheet",
+  "appIdIos": "com.yakuran.maxHeightBottomSheet",
+  "appIdSuffix": ".dev"
+}

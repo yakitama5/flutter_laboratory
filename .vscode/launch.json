@@ -10,7 +10,8 @@
       "type": "dart",
       "request": "launch",
       "flutterMode": "debug",
-      "program": "lib/main.dart"
+      "program": "lib/main.dart",
+      "args": ["--dart-define-from-file=flavor/dev.json", "--web-renderer html"]
     },
     {
       "name": "max-height-bottom-sheet",
@@ -18,7 +19,8 @@
       "type": "dart",
       "request": "launch",
       "flutterMode": "debug",
-      "program": "lib/main.dart"
+      "program": "lib/main.dart",
+      "args": ["--dart-define-from-file=flavor/dev.json", "--web-renderer html"]
     },
     {
       "name": "color-contrast",
@@ -26,7 +28,8 @@
       "type": "dart",
       "request": "launch",
       "flutterMode": "debug",
-      "program": "lib/main.dart"
+      "program": "lib/main.dart",
+      "args": ["--dart-define-from-file=flavor/dev.json", "--web-renderer html"]
     }
   ]
 }

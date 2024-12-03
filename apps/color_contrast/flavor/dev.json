@@ -1,0 +1,7 @@
+{
+  "flavor": "dev",
+  "appName": "ColorContrast",
+  "appIdAndroid": "com.yakuran.color_contrast",
+  "appIdIos": "com.yakuran.colorContrast",
+  "appIdSuffix": ".dev"
+}

@@ -1,0 +1,7 @@
+{
+  "flavor": "dev",
+  "appName": "LinkedScroll",
+  "appIdAndroid": "com.yakuran.linked_scroll",
+  "appIdIos": "com.yakuran.linkedScroll",
+  "appIdSuffix": ".dev"
+}
