@@ -31,6 +31,13 @@
       "request": "launch",
       "flutterMode": "debug",
       "program": "lib/responsive/src/main.dart"
+    },
+    {
+      "name": "color-contrast",
+      "type": "dart",
+      "request": "launch",
+      "flutterMode": "debug",
+      "program": "lib/color_contrast/src/main.dart"
     }
   ]
 }

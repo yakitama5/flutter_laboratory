@@ -19,15 +19,14 @@ dependencies:
     sdk: flutter
   freezed_annotation: null
   gap: null
-  hooks_riverpod: null
+  hooks_riverpod: 2.6.1
   intl: null
   json_annotation: null
   linked_scroll_controller: null
   logger: ^2.5.0
   nested: null
   responsive_framework: ^1.5.1
-  riverpod_annotation: null
-  riverpod_paging_utils: null
+  riverpod_annotation: 2.6.1
   slang: ^4.1.0
   slang_flutter: ^4.1.0
 
@@ -40,8 +39,8 @@ dev_dependencies:
   json_serializable: null
   nilts: null
   pedantic_mono: null
-  riverpod_generator: null
-  riverpod_lint: null
+  riverpod_generator: 2.6.1
+  riverpod_lint: 2.6.1
   slang_build_runner: ^4.1.0
 
 flutter:

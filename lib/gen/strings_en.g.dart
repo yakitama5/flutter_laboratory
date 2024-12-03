@@ -37,7 +37,7 @@ class Translations implements BaseTranslations<AppLocale, Translations> {
 	late final Translations _root = this; // ignore: unused_field
 
 	// Translations
-	String greet({required String name, required num amount}) => 'Hello ${name}, you have ${NumberFormat.currency(locale: 'en').format(amount)} in your account';
+	String greet({required num amount}) => '${NumberFormat.currency(locale: 'en').format(amount)}';
 	String today({required DateTime date}) => 'Today is ${DateFormat.yMd('en').format(date)}';
 }
 
@@ -46,7 +46,7 @@ class Translations implements BaseTranslations<AppLocale, Translations> {
 extension on Translations {
 	dynamic _flatMapFunction(String path) {
 		switch (path) {
-			case 'greet': return ({required String name, required num amount}) => 'Hello ${name}, you have ${NumberFormat.currency(locale: 'en').format(amount)} in your account';
+			case 'greet': return ({required num amount}) => '${NumberFormat.currency(locale: 'en').format(amount)}';
 			case 'today': return ({required DateTime date}) => 'Today is ${DateFormat.yMd('en').format(date)}';
 			default: return null;
 		}
