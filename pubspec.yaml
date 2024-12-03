@@ -11,6 +11,7 @@ dependencies:
   carousel_slider: null
   clock: null
   collection: null
+  device_info_plus: ^11.1.1
   flutter:
     sdk: flutter
   flutter_hooks: null
@@ -22,6 +23,7 @@ dependencies:
   intl: null
   json_annotation: null
   linked_scroll_controller: null
+  logger: ^2.5.0
   nested: null
   responsive_framework: ^1.5.1
   riverpod_annotation: null
