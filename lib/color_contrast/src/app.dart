@@ -8,7 +8,7 @@ class ColorContrastApp extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-// Providerで管理しているテーマをアプリに設定
+    // Providerで管理しているテーマをアプリに設定
     final theme = ref.watch(appThemeProvider);
 
     return MaterialApp(
