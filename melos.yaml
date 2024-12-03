@@ -1,4 +1,4 @@
-name: template
+name: flutter_labolatory
 sdkPath: .fvm/flutter_sdk
 
 packages:
