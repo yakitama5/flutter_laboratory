@@ -6,9 +6,11 @@ part of 'app_theme_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$appThemeHash() => r'53541da02255e9fa8c3d3d5f3c5b5a54e2935b6f';
+String _$appThemeHash() => r'bcd98c7b189cccb4505ce2c21dbe4f4f561f7e65';
 
-/// See also [appTheme].
+/// 「色のコントラスト」の設定値を基にアプリのテーマを管理
+///
+/// Copied from [appTheme].
 @ProviderFor(appTheme)
 final appThemeProvider = AutoDisposeProvider<ThemeData>.internal(
   appTheme,
