@@ -8,4 +8,9 @@ void run(HookContext context) {
     ['bs'],
     runInShell: true,
   );
+  Process.runSync(
+    'melos',
+    ['run', 'format_and_fix'],
+    runInShell: true,
+  );
 }
