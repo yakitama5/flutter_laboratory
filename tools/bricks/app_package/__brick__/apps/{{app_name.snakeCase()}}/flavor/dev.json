@@ -1,0 +1,7 @@
+{
+  "flavor": "dev",
+  "appName": "{{app_name.pascalCase()}}",
+  "appIdAndroid": "com.yakuran.{{app_name.snakeCase()}}",
+  "appIdIos": "com.yakuran.{{app_name.camelCase()}}",
+  "appIdSuffix": ".dev"
+}
