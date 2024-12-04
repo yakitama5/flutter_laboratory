@@ -16,6 +16,11 @@ class _SamplePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('{{app_name.pascalCase()}}'),
+      ),
+      body: const SizedBox.shrink(),
+    );
   }
 }
