@@ -14,6 +14,7 @@ class DynamicColorApp extends ConsumerWidget {
         ref.watch(appColorSchemeProvider(brightness: Brightness.dark));
 
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: const SamplePage(),
       theme: ThemeData(colorScheme: lightColorScheme),
       darkTheme:
