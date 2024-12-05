@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 /// ユーザーが選択可能なテーマカラー
 enum ThemeColor {
-  system(null),
+  appColor(null),
   dynamicColor(null),
   blue(Colors.blue),
   purple(Colors.purple),

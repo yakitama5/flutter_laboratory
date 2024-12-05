@@ -9,7 +9,7 @@ part 'theme_color_notifier_provider.g.dart';
 @riverpod
 class ThemeColorNotifier extends _$ThemeColorNotifier {
   @override
-  ThemeColor build() => ThemeColor.system;
+  ThemeColor build() => ThemeColor.appColor;
 
   // ignore: use_setters_to_change_properties
   void update({required ThemeColor themeColor}) {

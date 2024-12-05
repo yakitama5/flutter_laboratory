@@ -32,7 +32,7 @@ ColorScheme _colorScheme(
   CorePalette? dynamicCorePalette,
 ) {
   switch (themeColor) {
-    case ThemeColor.system:
+    case ThemeColor.appColor:
       return _defaultColorScheme(brightness);
     case ThemeColor.dynamicColor:
       if (dynamicCorePalette == null) {
