@@ -40,17 +40,31 @@ class _SampleComponents extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final cs = Theme.of(context).colorScheme;
+
     return Column(
       children: [
         FilledButton(onPressed: _onPressed, child: const Text('Filled')),
         FilledButton.tonal(onPressed: _onPressed, child: const Text('Tonal')),
-        IconButton(onPressed: _onPressed, icon: const Icon(Icons.add)),
         const Card.filled(
           child: SizedBox(
             width: 240,
-            height: 160,
+            height: 80,
             child: Center(
               child: Text('Filled Card'),
+            ),
+          ),
+        ),
+        Card(
+          color: cs.error,
+          child: SizedBox(
+            width: 240,
+            height: 80,
+            child: Center(
+              child: Text(
+                'Error',
+                style: TextStyle(color: cs.onError),
+              ),
             ),
           ),
         ),
@@ -71,18 +85,36 @@ class _Selector extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Wrap(
-      children: ThemeColor.values
-          .map(
-            (tc) => Radio<ThemeColor>(
-              value: tc,
-              groupValue: selectedValue,
-              activeColor: tc.seedColor,
-              hoverColor: tc.seedColor,
-              onChanged: onChanged,
-            ),
-          )
-          .toList(),
+    final radioTiles = ThemeColor.systemValues.map(
+      (tc) => RadioListTile(
+        value: tc,
+        groupValue: selectedValue,
+        title: Text(tc.name),
+        onChanged: onChanged,
+      ),
+    );
+    final colorRadios = ThemeColor.colorValues.map(
+      (tc) => Radio(
+        value: tc,
+        groupValue: selectedValue,
+        fillColor: WidgetStateProperty.all(tc.seedColor),
+        onChanged: onChanged,
+      ),
+    );
+
+    return Column(
+      children: [
+        ...radioTiles,
+        const Divider(),
+        Text(
+          'Colors',
+          style: Theme.of(context).textTheme.titleLarge,
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: colorRadios.toList(),
+        ),
+      ],
     );
   }
 }

@@ -14,5 +14,10 @@ enum ThemeColor {
 
   const ThemeColor(this.seedColor);
 
+  static List<ThemeColor> get colorValues =>
+      values.where((i) => i.seedColor != null).toList();
+  static List<ThemeColor> get systemValues =>
+      values.where((i) => i.seedColor == null).toList();
+
   final Color? seedColor;
 }
