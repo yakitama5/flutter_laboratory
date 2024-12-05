@@ -2,7 +2,7 @@
 
 // ignore_for_file: type=lint, duplicate_ignore
 
-part of 'app_theme_provider.dart';
+part of 'app_color_scheme_provider.dart';
 
 // **************************************************************************
 // RiverpodGenerator

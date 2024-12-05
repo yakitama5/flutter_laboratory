@@ -1,15 +1,15 @@
-// ignore_for_file: avoid_manual_providers_as_generated_provider_dependency
 import 'package:dynamic_color/dynamic_color.dart';
 import 'package:dynamic_color_app/src/enum/theme_color.dart';
 import 'package:dynamic_color_app/src/state/dynamic_core_pallete_provider.dart';
 import 'package:dynamic_color_app/src/state/theme_color_notifier_provider.dart';
+import 'package:dynamic_color_app/src/theme.dart';
 import 'package:dynamic_color_app/src/utils/dynamic_color_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:material_color_utilities/palettes/core_palette.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-part 'app_theme_provider.g.dart';
+part 'app_color_scheme_provider.g.dart';
 
 /// アプリ内のカラースキーマを管理
 @riverpod
@@ -61,7 +61,7 @@ ColorScheme _colorScheme(
 
 ColorScheme _defaultColorScheme(Brightness brightness) {
   return switch (brightness) {
-    Brightness.light => const ColorScheme.light(),
-    Brightness.dark => const ColorScheme.dark(),
+    Brightness.light => MaterialTheme.lightScheme().toColorScheme(),
+    Brightness.dark => MaterialTheme.darkScheme().toColorScheme(),
   };
 }
