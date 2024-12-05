@@ -1,0 +1,7 @@
+{
+  "flavor": "dev",
+  "appName": "DynamicColor",
+  "appIdAndroid": "com.yakuran.dynamic_color",
+  "appIdIos": "com.yakuran.dynamicColor",
+  "appIdSuffix": ".dev"
+}
