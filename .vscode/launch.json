@@ -5,7 +5,7 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "linked-scroll",
+      "name": "LinkedScroll",
       "cwd": "apps/linked_scroll",
       "type": "dart",
       "request": "launch",
@@ -14,7 +14,7 @@
       "args": ["--dart-define-from-file=flavor/dev.json", "--web-renderer html"]
     },
     {
-      "name": "max-height-bottom-sheet",
+      "name": "MaxHeightBottomSheet",
       "cwd": "apps/max_height_bottom_sheet",
       "type": "dart",
       "request": "launch",
@@ -23,8 +23,17 @@
       "args": ["--dart-define-from-file=flavor/dev.json", "--web-renderer html"]
     },
     {
-      "name": "color-contrast",
+      "name": "ColorConstrast",
       "cwd": "apps/color_contrast",
+      "type": "dart",
+      "request": "launch",
+      "flutterMode": "debug",
+      "program": "lib/main.dart",
+      "args": ["--dart-define-from-file=flavor/dev.json", "--web-renderer html"]
+    },
+    {
+      "name": "DynamicColor",
+      "cwd": "apps/dynamic_color_app",
       "type": "dart",
       "request": "launch",
       "flutterMode": "debug",

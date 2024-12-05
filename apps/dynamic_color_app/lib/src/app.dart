@@ -18,7 +18,7 @@ class _SamplePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('DynamicColor'),
+        title: const Text('DynamicColorApp'),
       ),
       body: const SizedBox.shrink(),
     );

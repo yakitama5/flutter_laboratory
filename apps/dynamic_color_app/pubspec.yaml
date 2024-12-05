@@ -1,4 +1,4 @@
-name: dynamic_color
+name: dynamic_color_app
 description: "This is working repository"
 publish_to: "none"
 version: 0.0.1
@@ -8,14 +8,15 @@ environment:
   flutter: ^3.24.4
 
 dependencies:
-  collection:
+  collection: null
   core:
     path: ../../packages/core
+  dynamic_color: ^1.7.0
   flutter:
     sdk: flutter
   flutter_hooks: ^0.20.5
   hooks_riverpod: ^2.6.1
-  nested:
+  nested: null
   riverpod_annotation: ^2.6.1
 
 dev_dependencies:
