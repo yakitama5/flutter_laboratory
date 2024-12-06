@@ -1,0 +1,14 @@
+icons_launcher:
+  image_path: "assets/launcher_icon/icon.png"
+  platforms:
+    android:
+      enable: true
+      image_path: "assets/launcher_icon/icon.png"
+      adaptive_background_color: '#FFFFFF'
+      adaptive_foreground_image: "assets/launcher_icon/icon_adaptive.png"
+      adaptive_round_image: "assets/launcher_icon/icon_adaptive.png"
+      # 用意したモノクロ写真の設定を追加
+      adaptive_monochrome_image: "assets/launcher_icon/icon_adaptive_monochrome.png"
+    ios:
+      enable: true
+      image_path: "assets/launcher_icon/icon.png"

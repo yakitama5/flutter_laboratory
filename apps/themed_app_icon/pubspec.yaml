@@ -8,14 +8,14 @@ environment:
   flutter: ^3.24.4
 
 dependencies:
-  collection:
+  collection: null
   core:
     path: ../../packages/core
   flutter:
     sdk: flutter
   flutter_hooks: ^0.20.5
   hooks_riverpod: ^2.6.1
-  nested:
+  nested: null
   riverpod_annotation: ^2.6.1
 
 dev_dependencies:
@@ -23,6 +23,7 @@ dev_dependencies:
   custom_lint: ^0.7.0
   flutter_test:
     sdk: flutter
+  icons_launcher: ^3.0.0
   nilts: ^0.17.0
   pedantic_mono: ^1.29.0
   riverpod_generator: ^2.6.1
