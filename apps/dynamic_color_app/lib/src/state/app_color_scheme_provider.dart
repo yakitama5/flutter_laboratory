@@ -20,7 +20,7 @@ ColorScheme appColorScheme(Ref ref, {required Brightness brightness}) {
   // テーマカラーに応じたカラースキーマを取得
   final colorScheme = _colorScheme(brightness, themeColor, dynamicCorePalette);
 
-  // Dynamic Colorに対応している場合、背景色とエラー関連の色を調和する
+  // Dynamic Colorに対応している場合、エラー色を調和する
   final isDynamicColorSupported = dynamicCorePalette != null;
   return isDynamicColorSupported ? colorScheme.harmonized() : colorScheme;
 }
@@ -35,14 +35,16 @@ ColorScheme _colorScheme(
     case ThemeColor.appColor:
       return _defaultColorScheme(brightness);
     case ThemeColor.dynamicColor:
+      // DynamicColorに対応していない場合は、アプリのテーマカラーを設定
       if (dynamicCorePalette == null) {
         return _defaultColorScheme(brightness);
       }
 
+      // デバイスのテーマカラーを基にカラースキーマを生成
       final dynamicColorScheme =
           dynamicCorePalette.toColorScheme(brightness: brightness);
 
-      // [暫定対応] Flutter3.22.0の`ColorScheme`に対する変更が反映されていないため変換
+      // [暫定対応] Flutter3.22.0で行われた`ColorScheme`の破壊的変更への対応
       return generateDynamicColourSchemes(dynamicColorScheme);
 
     case ThemeColor.blue:
@@ -52,6 +54,7 @@ ColorScheme _colorScheme(
     case ThemeColor.orange:
     case ThemeColor.yellow:
     case ThemeColor.green:
+      // テーマカラーが選択された場合は、対応する色を基に生成
       return ColorScheme.fromSeed(
         seedColor: themeColor.seedColor!,
         brightness: brightness,

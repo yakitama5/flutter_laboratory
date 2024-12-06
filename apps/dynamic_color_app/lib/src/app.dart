@@ -16,6 +16,7 @@ class DynamicColorApp extends ConsumerWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: const SamplePage(),
+      // Providerで管理した`ColorScheme`を基にアプリテーマを設定
       theme: ThemeData(colorScheme: lightColorScheme),
       darkTheme:
           ThemeData(colorScheme: darkColorScheme, brightness: Brightness.dark),

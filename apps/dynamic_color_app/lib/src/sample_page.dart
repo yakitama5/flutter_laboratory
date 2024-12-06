@@ -89,7 +89,7 @@ class _Selector extends StatelessWidget {
       (tc) => RadioListTile(
         value: tc,
         groupValue: selectedValue,
-        title: Text(tc.name),
+        title: Text(tc.description),
         onChanged: onChanged,
       ),
     );
