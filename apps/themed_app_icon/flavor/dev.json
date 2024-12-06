@@ -1,0 +1,7 @@
+{
+  "flavor": "dev",
+  "appName": "ThemedAppIcon",
+  "appIdAndroid": "com.yakuran.themed_app_icon",
+  "appIdIos": "com.yakuran.themedAppIcon",
+  "appIdSuffix": ".dev"
+}

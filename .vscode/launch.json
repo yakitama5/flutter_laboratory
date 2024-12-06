@@ -39,6 +39,15 @@
       "flutterMode": "debug",
       "program": "lib/main.dart",
       "args": ["--dart-define-from-file=flavor/dev.json", "--web-renderer html"]
+    },
+    {
+      "name": "ThemedAppIcon",
+      "cwd": "apps/themed_app_icon",
+      "type": "dart",
+      "request": "launch",
+      "flutterMode": "debug",
+      "program": "lib/main.dart",
+      "args": ["--dart-define-from-file=flavor/dev.json", "--web-renderer html"]
     }
   ]
 }
