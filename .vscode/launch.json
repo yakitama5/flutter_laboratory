@@ -5,6 +5,15 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "FCMExample",
+      "cwd": "apps/fcm_example",
+      "type": "dart",
+      "request": "launch",
+      "flutterMode": "debug",
+      "program": "lib/main.dart",
+      "args": ["--dart-define-from-file=flavor/dev.json", "--web-renderer html"]
+    },
+    {
       "name": "LinkedScroll",
       "cwd": "apps/linked_scroll",
       "type": "dart",

@@ -1,8 +1,8 @@
 plugins {
     id "com.android.application"
     id "kotlin-android"
-    // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
     id "dev.flutter.flutter-gradle-plugin"
+    id 'com.google.gms.google-services'
 }
 
 // dart-define-from-file
@@ -42,23 +42,15 @@ if (flutterVersionName == null) {
     flutterVersionName = "1.0"
 }
 
-task copySources(type: Copy) {
-    from "src/${dartDefines.flavor}/res"
-    into 'src/main/res'
-}
-
-tasks.whenTaskAdded { task ->
-    task.dependsOn copySources
-}
-
 android {
     namespace = "com.yakuran.flutter_laboratory"
     compileSdk = 34
-    ndkVersion = flutter.ndkVersion
+    ndkVersion = "26.1.10909125"
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
+        coreLibraryDesugaringEnabled true
     }
 
     kotlinOptions {
@@ -101,4 +93,10 @@ android {
 
 flutter {
     source = "../.."
+}
+
+dependencies {
+    implementation 'androidx.window:window:1.0.0'
+    implementation 'androidx.window:window-java:1.0.0'
+    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:1.2.2'
 }

@@ -3,5 +3,5 @@
   "appName": "FcmExample",
   "appIdAndroid": "com.yakuran.fcm_example",
   "appIdIos": "com.yakuran.fcmExample",
-  "appIdSuffix": ".dev"
+  "appIdSuffix": ""
 }
