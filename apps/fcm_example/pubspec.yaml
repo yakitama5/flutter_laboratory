@@ -1,0 +1,29 @@
+name: fcm_example
+description: "This is working repository"
+publish_to: "none"
+version: 0.0.1
+
+environment:
+  sdk: ^3.5.4
+  flutter: ^3.24.4
+
+dependencies:
+  collection:
+  core:
+    path: ../../packages/core
+  flutter:
+    sdk: flutter
+  flutter_hooks: ^0.20.5
+  hooks_riverpod: ^2.6.1
+  nested:
+  riverpod_annotation: ^2.6.1
+
+dev_dependencies:
+  build_runner: ^2.4.13
+  custom_lint: ^0.7.0
+  flutter_test:
+    sdk: flutter
+  nilts: ^0.17.0
+  pedantic_mono: ^1.29.0
+  riverpod_generator: ^2.6.1
+  riverpod_lint: ^2.6.1
