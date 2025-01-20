@@ -8,7 +8,7 @@ part of 'app_color_scheme_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$appColorSchemeHash() => r'2e0b9156456a2661928790b2b603878055ee308c';
+String _$appColorSchemeHash() => r'4936fa768897abd6a484836b4a3454fbb0809fb6';
 
 /// Copied from Dart SDK
 class _SystemHash {
