@@ -1,6 +1,6 @@
 // This is a generated file; do not edit or check into version control.
-FLUTTER_ROOT=C:\Users\s-takehara\fvm\versions\3.24.4
-FLUTTER_APPLICATION_PATH=C:\Users\s-takehara\ghq\github.com\yakitama5\flutter_laboratory\apps\themed_app_icon
+FLUTTER_ROOT=C:\Users\s-takehara\ghq\github.com\yakitama5\flutter_laboratory\.fvm\flutter_sdk
+FLUTTER_APPLICATION_PATH=c:\Users\s-takehara\ghq\github.com\yakitama5\flutter_laboratory\apps\themed_app_icon
 COCOAPODS_PARALLEL_CODE_SIGN=true
 FLUTTER_TARGET=lib\main.dart
 FLUTTER_BUILD_DIR=build
