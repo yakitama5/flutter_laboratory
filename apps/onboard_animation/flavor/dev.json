@@ -1,0 +1,7 @@
+{
+  "flavor": "dev",
+  "appName": "OnboardAnimation",
+  "appIdAndroid": "com.yakuran.onboard_animation",
+  "appIdIos": "com.yakuran.onboardAnimation",
+  "appIdSuffix": ".dev"
+}
