@@ -8,14 +8,18 @@ environment:
   flutter: ^3.27.2
 
 dependencies:
-  collection:
+  auto_size_text: ^3.0.0
+  collection: null
   core:
     path: ../../packages/core
   flutter:
     sdk: flutter
   flutter_hooks: ^0.20.5
+  google_fonts: ^6.2.1
+  grayscale: ^0.0.5+7
   hooks_riverpod: ^2.6.1
-  nested:
+  material_color_utilities: ^0.11.0
+  nested: null
   riverpod_annotation: ^2.6.1
 
 dev_dependencies:
@@ -27,3 +31,6 @@ dev_dependencies:
   pedantic_mono: ^1.29.0
   riverpod_generator: ^2.6.1
   riverpod_lint: ^2.6.1
+
+flutter:
+  uses-material-design: true
