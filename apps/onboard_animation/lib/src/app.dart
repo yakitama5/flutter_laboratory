@@ -37,16 +37,6 @@ class _SamplePage extends HookWidget {
   Widget build(BuildContext context) {
     final animationState = useState(OnboardAnimationState.initial);
 
-    useEffect(
-      () {
-        Future<void>.delayed(const Duration(milliseconds: 5000)).then((_) {
-          animationState.value = animationState.value.next();
-        });
-        return null;
-      },
-      [],
-    );
-
     return SafeArea(
       child: Scaffold(
         body: Padding(
@@ -125,6 +115,17 @@ class _SamplePage extends HookWidget {
             ],
           ),
         ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            animationState.value = OnboardAnimationState.initial;
+
+            Future<void>.delayed(const Duration(milliseconds: 1000)).then((_) {
+              animationState.value = animationState.value.next();
+            });
+          },
+          child: const Icon(Icons.replay),
+        ),
+        floatingActionButtonLocation: FloatingActionButtonLocation.endTop,
       ),
     );
   }
