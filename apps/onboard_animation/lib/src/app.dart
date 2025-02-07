@@ -73,7 +73,7 @@ class _SamplePage extends HookWidget {
                 child: AnimatedOpacity(
                   onEnd: () {
                     if (animationState.value ==
-                        OnboardAnimationState.showWelcomeMessage) {
+                        OnboardAnimationState.showedWelcomeMessage) {
                       Future<void>.delayed(const Duration(milliseconds: 1000))
                           .then((_) {
                         animationState.value = animationState.value.next();
@@ -93,12 +93,9 @@ class _SamplePage extends HookWidget {
                 ),
               ),
               AnimatedOpacity(
-                onEnd: () {
-                  // TODO(yakitama5): a
-                },
                 curve: Curves.easeInQuint,
                 opacity: switch (animationState.value) {
-                  OnboardAnimationState.completed => 1,
+                  OnboardAnimationState.showedChoices => 1,
                   _ => 0,
                 },
                 duration: const Duration(milliseconds: 500),
