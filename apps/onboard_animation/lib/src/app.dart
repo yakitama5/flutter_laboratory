@@ -97,14 +97,16 @@ class _SamplePage extends HookWidget {
                       SizedBox(
                         width: double.infinity,
                         child: FilledButton(
-                          onPressed: () {},
+                          onPressed: () => animationState.value =
+                              OnboardAnimationState.selectedYes,
                           child: const Text('はい'),
                         ),
                       ),
                       SizedBox(
                         width: double.infinity,
                         child: FilledButton.tonal(
-                          onPressed: () {},
+                          onPressed: () => animationState.value =
+                              OnboardAnimationState.selectedNo,
                           child: const Text('いいえ'),
                         ),
                       ),
