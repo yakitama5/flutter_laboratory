@@ -46,22 +46,12 @@ class _SamplePage extends HookWidget {
               Padding(
                 padding: const EdgeInsets.only(bottom: 240),
                 child: Center(
-                  child: AnimatedOpacity(
-                    opacity: switch (animationState.value) {
-                      OnboardAnimationState.initial => 0,
-                      _ => 1,
-                    },
-                    duration: const Duration(milliseconds: 500),
-                    child: const Icon(
-                      Icons.arrow_drop_down_circle_rounded,
-                      size: 128,
-                    ),
-                  ),
+                  child: AppLogo(animationState: animationState.value),
                 ),
               ),
               Center(
-                child: AnimatedOpacity(
-                  onEnd: () {
+                child: WelcomeMessage(
+                  onShowedMessage: () {
                     if (animationState.value ==
                         OnboardAnimationState.showedWelcomeMessage) {
                       Future<void>.delayed(const Duration(milliseconds: 1000))
@@ -70,47 +60,19 @@ class _SamplePage extends HookWidget {
                       });
                     }
                   },
-                  opacity: switch (animationState.value) {
-                    OnboardAnimationState.initial => 0,
-                    _ => 1,
-                  },
-                  duration: const Duration(milliseconds: 500),
-                  child: AutoSizeText(
-                    'アプリを利用しますか？',
-                    style: Theme.of(context).textTheme.displayMedium,
-                    maxLines: 1,
-                  ),
+                  animationState: animationState.value,
                 ),
               ),
-              AnimatedOpacity(
-                curve: Curves.easeInQuint,
-                opacity: switch (animationState.value) {
-                  OnboardAnimationState.showedChoices => 1,
-                  _ => 0,
-                },
-                duration: const Duration(milliseconds: 500),
+              Align(
+                alignment: Alignment.bottomCenter,
                 child: Padding(
                   padding: const EdgeInsets.only(bottom: 64),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      SizedBox(
-                        width: double.infinity,
-                        child: FilledButton(
-                          onPressed: () => animationState.value =
-                              OnboardAnimationState.selectedYes,
-                          child: const Text('はい'),
-                        ),
-                      ),
-                      SizedBox(
-                        width: double.infinity,
-                        child: FilledButton.tonal(
-                          onPressed: () => animationState.value =
-                              OnboardAnimationState.selectedNo,
-                          child: const Text('いいえ'),
-                        ),
-                      ),
-                    ],
+                  child: SelectedButtonList(
+                    onPressedYes: () => animationState.value =
+                        OnboardAnimationState.selectedYes,
+                    onPressedNo: () =>
+                        animationState.value = OnboardAnimationState.selectedNo,
+                    animationState: animationState.value,
                   ),
                 ),
               ),
@@ -128,6 +90,121 @@ class _SamplePage extends HookWidget {
           child: const Icon(Icons.replay),
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.endTop,
+      ),
+    );
+  }
+}
+
+class AppLogo extends StatelessWidget {
+  const AppLogo({super.key, required this.animationState});
+
+  final OnboardAnimationState animationState;
+
+  @override
+  Widget build(BuildContext context) {
+    return AnimatedOpacity(
+      opacity: switch (animationState) {
+        OnboardAnimationState.initial => 0,
+        _ => 1,
+      },
+      duration: const Duration(milliseconds: 500),
+      child: const Icon(
+        Icons.arrow_drop_down_circle_rounded,
+        size: 128,
+      ),
+    );
+  }
+}
+
+class WelcomeMessage extends StatelessWidget {
+  const WelcomeMessage({
+    super.key,
+    required this.onShowedMessage,
+    required this.animationState,
+  });
+
+  final VoidCallback onShowedMessage;
+  final OnboardAnimationState animationState;
+
+  @override
+  Widget build(BuildContext context) {
+    return AnimatedOpacity(
+      onEnd: onShowedMessage,
+      opacity: switch (animationState) {
+        OnboardAnimationState.initial => 0,
+        _ => 1,
+      },
+      duration: const Duration(milliseconds: 500),
+      child: AutoSizeText(
+        'アプリを利用しますか？',
+        style: Theme.of(context).textTheme.displayMedium,
+        maxLines: 1,
+      ),
+    );
+  }
+}
+
+class SelectedButtonList extends StatelessWidget {
+  const SelectedButtonList({
+    super.key,
+    required this.onPressedYes,
+    required this.onPressedNo,
+    required this.animationState,
+  });
+
+  final VoidCallback onPressedYes;
+  final VoidCallback onPressedNo;
+  final OnboardAnimationState animationState;
+
+  @override
+  Widget build(BuildContext context) {
+    return AnimatedOpacity(
+      curve: Curves.easeInQuint,
+      opacity: switch (animationState) {
+        OnboardAnimationState.initial ||
+        OnboardAnimationState.showedWelcomeMessage =>
+          0,
+        _ => 1,
+      },
+      duration: const Duration(milliseconds: 500),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          AnimatedOpacity(
+            opacity: switch (animationState) {
+              OnboardAnimationState.initial ||
+              OnboardAnimationState.showedWelcomeMessage ||
+              OnboardAnimationState.selectedNo =>
+                0,
+              _ => 1,
+            },
+            duration: const Duration(milliseconds: 500),
+            child: SizedBox(
+              width: double.infinity,
+              child: FilledButton(
+                onPressed: onPressedYes,
+                child: const Text('はい'),
+              ),
+            ),
+          ),
+          AnimatedOpacity(
+            opacity: switch (animationState) {
+              OnboardAnimationState.initial ||
+              OnboardAnimationState.showedWelcomeMessage ||
+              OnboardAnimationState.selectedYes =>
+                0,
+              _ => 1,
+            },
+            duration: const Duration(milliseconds: 500),
+            child: SizedBox(
+              width: double.infinity,
+              child: FilledButton(
+                onPressed: onPressedYes,
+                child: const Text('いいえ'),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
