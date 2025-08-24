@@ -1,0 +1,7 @@
+{
+  "flavor": "dev",
+  "appName": "GoRouterPopScope",
+  "appIdAndroid": "com.yakuran.go_router_pop_scope",
+  "appIdIos": "com.yakuran.goRouterPopScope",
+  "appIdSuffix": ".dev"
+}
