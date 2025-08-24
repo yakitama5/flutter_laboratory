@@ -1,26 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:go_router_pop_scope/src/routes/router_provider.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-class GoRouterPopScopeApp extends StatelessWidget {
+class GoRouterPopScopeApp extends HookConsumerWidget {
   const GoRouterPopScopeApp({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: _SamplePage(),
-    );
-  }
-}
-
-class _SamplePage extends StatelessWidget {
-  const _SamplePage();
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('GoRouterPopScope'),
-      ),
-      body: const SizedBox.shrink(),
+  Widget build(BuildContext context, WidgetRef ref) {
+    return MaterialApp.router(
+      routerConfig: ref.watch(routerProvider),
     );
   }
 }

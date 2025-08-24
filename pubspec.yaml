@@ -12,6 +12,7 @@ workspace:
   - apps/max_height_bottom_sheet
   - apps/onboard_animation
   - apps/themed_app_icon
+  - apps/go_router_pop_scope
   - packages/core
 
 dev_dependencies:

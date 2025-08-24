@@ -75,6 +75,15 @@
       "flutterMode": "debug",
       "program": "lib/main.dart",
       "args": ["--dart-define-from-file=flavor/dev.json", "--web-renderer html"]
+    },
+    {
+      "name": "GoRouterPopScope",
+      "cwd": "apps/go_router_pop_scope",
+      "type": "dart",
+      "request": "launch",
+      "flutterMode": "debug",
+      "program": "lib/main.dart",
+      "args": ["--dart-define-from-file=flavor/dev.json", "--web-renderer html"]
     }
   ]
 }
