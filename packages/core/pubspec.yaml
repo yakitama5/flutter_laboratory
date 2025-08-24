@@ -4,8 +4,10 @@ publish_to: "none"
 version: 0.0.1
 
 environment:
-  sdk: ^3.6.1
-  flutter: ^3.27.2
+  sdk: ^3.9.0
+  flutter: ^3.35.1
+
+resolution: workspace
 
 dependencies:
   flutter:
@@ -15,5 +17,5 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  nilts: ^0.17.0
+  nilts: ^0.23.1
   pedantic_mono: ^1.29.0

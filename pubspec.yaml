@@ -1,15 +1,113 @@
 name: flutter_labolatory
 
 environment:
-  sdk: ^3.5.4
+  sdk: ^3.9.0
+
+workspace:
+  - apps/color_contrast
+  - apps/dynamic_color_app
+  - apps/dynamic_color_variant
+  - apps/fcm_example
+  - apps/linked_scroll
+  - apps/max_height_bottom_sheet
+  - apps/onboard_animation
+  - apps/themed_app_icon
+  - packages/core
 
 dev_dependencies:
-  custom_lint: ^0.7.0
+  custom_lint: ^0.7.6
   flutter_lints:
   grinder: ^0.9.5
-  melos: ^6.2.0
-  nilts: ^0.17.0
+  melos: ^7.1.0
+  nilts: ^0.23.1
   path: ^1.9.0
   pedantic_mono: ^1.29.0
   yaml: ^3.1.2
   yaml_edit: ^2.2.1
+
+
+melos:
+  sdkPath: .fvm/flutter_sdk
+
+  ide:
+  intellij:
+    # Disabling IntelliJ's automatic configuration.
+    # This is to support different build configurations for environments.
+    enabled: false
+
+  command:
+    bootstrap:
+      environment:
+        sdk: ^3.9.0
+        flutter: ^3.35.1
+      dependencies:
+        collection: any
+        flutter_hooks: ^0.20.5
+        hooks_riverpod: ^2.6.1
+        riverpod_annotation: ^2.6.1
+      dev_dependencies:
+        build_runner: ^2.4.13
+        custom_lint: ^0.7.6
+        nilts: ^0.23.1
+        pedantic_mono: ^1.29.0
+        riverpod_generator: ^2.6.1
+        riverpod_lint: ^2.6.1
+        test: any
+    clean:
+      hooks:
+        post: melos exec --flutter --concurrency=3 -- "flutter clean"
+          melos exec --flutter --file-exists="ios/Podfile.lock" -- "cd ios && rm Podfile.lock"
+          melos exec --flutter --file-exists="macos/Podfile.lock" -- "cd macos && rm Podfile.lock"
+
+  scripts:
+    report_test:
+      exec: flutter test --no-pub --machine > test_report.log
+      packageFilters:
+        flutter: true
+        dependsOn: test
+
+    # ローカルでフォーマットとdart fix --applyを実行する
+    format_and_fix:
+      exec: bash "$MELOS_ROOT_PATH/scripts/format.sh"
+
+    report_custom_lint:ci:
+      exec: bash "$MELOS_ROOT_PATH/scripts/report-custom-lint-ci.sh"
+      packageFilters:
+        dependsOn: custom_lint
+
+    regenerate_code: melos run regenerate_by_using_build_runner && melos run regenerate_by_using_gen_slang
+
+    regenerate_by_using_build_runner:
+      run: dart run build_runner build -d
+      exec:
+        orderDependents: true
+      packageFilters:
+        dependsOn: build_runner
+
+    regenerate_by_using_gen_slang:
+      run: dart run slang
+      exec:
+        orderDependents: true
+      packageFilters:
+        dependsOn: slang
+
+    watch_build_runner:
+      run: dart run build_runner watch -d
+      exec:
+        orderDependents: true
+      packageFilters:
+        dependsOn: build_runner
+
+    test_golden:
+      run: flutter test --tags=golden
+      exec:
+        orderDependents: true
+      packageFilters:
+        dependsOn: alchemist
+
+    test_update_golden:
+      run: flutter test --update-goldens
+      exec:
+        orderDependents: true
+      packageFilters:
+        dependsOn: alchemist

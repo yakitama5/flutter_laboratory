@@ -14,9 +14,7 @@ class SamplePage extends ConsumerWidget {
     final variant = ref.watch(variantNotifierProvider);
 
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('DynamicColorApp'),
-      ),
+      appBar: AppBar(title: const Text('DynamicColorApp')),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
@@ -66,9 +64,7 @@ class _SampleComponents extends StatelessWidget {
           child: SizedBox(
             width: 240,
             height: 80,
-            child: Center(
-              child: Text('Filled Card'),
-            ),
+            child: Center(child: Text('Filled Card')),
           ),
         ),
         Card(
@@ -77,10 +73,7 @@ class _SampleComponents extends StatelessWidget {
             width: 240,
             height: 80,
             child: Center(
-              child: Text(
-                'Error',
-                style: TextStyle(color: cs.onError),
-              ),
+              child: Text('Error', style: TextStyle(color: cs.onError)),
             ),
           ),
         ),
@@ -109,28 +102,28 @@ class _Selector extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final radioTiles = ThemeColor.systemValues.map(
-      (tc) => RadioListTile(
-        value: tc,
+      (tc) => RadioGroup(
         groupValue: selectedValue,
-        title: Text(tc.description),
         onChanged: onChanged,
+        child: RadioListTile(value: tc, title: Text(tc.description)),
       ),
     );
     final colorRadios = ThemeColor.colorValues.map(
-      (tc) => Radio(
-        value: tc,
+      (tc) => RadioGroup(
         groupValue: selectedValue,
-        fillColor: WidgetStateProperty.all(tc.seedColor),
         onChanged: onChanged,
+        child: Radio(
+          value: tc,
+          fillColor: WidgetStateProperty.all(tc.seedColor),
+        ),
       ),
     );
 
     final variantTiles = Variant.values.map(
-      (v) => RadioListTile(
-        value: v,
-        title: Text(v.name),
-        groupValue: selectedVariant,
-        onChanged: onChangedVariant,
+      (v) => RadioGroup(
+        groupValue: selectedValue,
+        onChanged: onChanged,
+        child: RadioListTile(value: v, title: Text(v.name)),
       ),
     );
 
@@ -140,10 +133,7 @@ class _Selector extends StatelessWidget {
         const Divider(),
         ...variantTiles,
         const Divider(),
-        Text(
-          'Colors',
-          style: Theme.of(context).textTheme.titleLarge,
-        ),
+        Text('Colors', style: Theme.of(context).textTheme.titleLarge),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: colorRadios.toList(),
