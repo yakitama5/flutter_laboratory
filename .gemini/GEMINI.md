@@ -14,12 +14,12 @@
   * **Linting:** 推奨されるルールセットで Dart linter を使用し、一般的な問題を検出します。`analyze_files` ツールを使用してリンターを実行してください。
 * **やり取りする言語:** ユーザーは日本人です。やりとりは基本的に日本語でお願いします。
 * 以下のドキュメントも**日本語で作成する**
-  * 実装計画 (Implementation Plan)
-  * 修正内容の確認 (Walkthrough)
-  * タスクリスト (Task List)
-  * リリースノート (Release Notes)
-  * バージョンアップデートガイド (Version Update Guide)
-  * 考察中のログ (Research Log)
+  * 実装計画 (implementation_plan.md)
+  * 修正内容の確認 (walkthrough.md)
+  * タスクリスト (task_list.md)
+  * リリースノート (release_notes.md)
+  * バージョンアップデートガイド (version_update_guide.md)
+  * 考察中のログ (research_log.md)
 
 ## 🏗️ Project Structure (プロジェクト構造)
 
