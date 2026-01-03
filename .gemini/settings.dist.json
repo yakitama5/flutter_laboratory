@@ -4,6 +4,10 @@
       "command": "dart",
       "args": ["mcp-server"]
     },
+    "maestro": {
+      "command": "maestro",
+      "args": ["mcp"]
+    },
     "github-remote": {
       "httpUrl": "https://api.githubcopilot.com/mcp/",
       "headers": {
