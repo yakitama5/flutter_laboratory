@@ -13,24 +13,24 @@ workspace:
   - apps/onboard_animation
   - apps/themed_app_icon
   - apps/go_router_pop_scope
+  - apps/go_open_container
   - packages/core
 
 dev_dependencies:
   custom_lint: ^0.7.6
-  flutter_lints:
+  flutter_lints: null
   grinder: ^0.9.5
-  melos: ^7.1.0
+  melos: ^7.3.0
   nilts: ^0.23.1
   path: ^1.9.0
   pedantic_mono: ^1.29.0
   yaml: ^3.1.2
   yaml_edit: ^2.2.1
 
-
 melos:
   sdkPath: .fvm/flutter_sdk
 
-  ide:
+  ide: null
   intellij:
     # Disabling IntelliJ's automatic configuration.
     # This is to support different build configurations for environments.
@@ -56,9 +56,10 @@ melos:
         test: any
     clean:
       hooks:
-        post: melos exec --flutter --concurrency=3 -- "flutter clean"
-          melos exec --flutter --file-exists="ios/Podfile.lock" -- "cd ios && rm Podfile.lock"
-          melos exec --flutter --file-exists="macos/Podfile.lock" -- "cd macos && rm Podfile.lock"
+        post: melos exec --flutter --concurrency=3 -- "flutter clean" melos exec
+          --flutter --file-exists="ios/Podfile.lock" -- "cd ios && rm
+          Podfile.lock" melos exec --flutter --file-exists="macos/Podfile.lock"
+          -- "cd macos && rm Podfile.lock"
 
   scripts:
     report_test:
@@ -76,7 +77,8 @@ melos:
       packageFilters:
         dependsOn: custom_lint
 
-    regenerate_code: melos run regenerate_by_using_build_runner && melos run regenerate_by_using_gen_slang
+    regenerate_code: melos run regenerate_by_using_build_runner && melos run
+      regenerate_by_using_gen_slang
 
     regenerate_by_using_build_runner:
       run: dart run build_runner build -d

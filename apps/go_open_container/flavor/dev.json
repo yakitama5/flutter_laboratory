@@ -1,0 +1,7 @@
+{
+  "flavor": "dev",
+  "appName": "GoOpenContainer",
+  "appIdAndroid": "com.yakuran.go_open_container",
+  "appIdIos": "com.yakuran.goOpenContainer",
+  "appIdSuffix": ".dev"
+}

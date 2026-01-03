@@ -1,4 +1,4 @@
-name: {{app_name.snakeCase()}}
+name: { { app_name.snakeCase() } }
 description: "This is working repository"
 publish_to: "none"
 version: 0.0.1
@@ -6,6 +6,8 @@ version: 0.0.1
 environment:
   sdk: ^3.5.4
   flutter: ^3.24.4
+
+resolution: workspace
 
 dependencies:
   collection:
