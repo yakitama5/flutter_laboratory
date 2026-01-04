@@ -1,0 +1,12 @@
+appId: com.yakuran.go_open_container
+---
+- launchApp
+- assertVisible: "List Screen"
+- assertVisible: "Item 1"
+- tapOn: "Item 1"
+- assertVisible: "Detail 1"
+- tapOn:
+    point: "50,50" # Approximate location for back button if id lookup fails, or use back
+# Using standard Android back
+- back
+- assertVisible: "Item 1"

@@ -24,3 +24,6 @@ dev_dependencies:
     sdk: flutter
   nilts: ^0.23.1
   pedantic_mono: ^1.29.0
+
+flutter:
+  uses-material-design: true
